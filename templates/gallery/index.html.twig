@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes photos {{ parent() }}{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+
+        {% include('components/_gallery.html.twig') %}
+    </div>
+
+
+{% endblock %}

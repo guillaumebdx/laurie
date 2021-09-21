@@ -1,0 +1,17 @@
+.my-gallery {
+  background-image: url('../images/laurie_cheveux2.jpg');
+  background-position: 50% top;
+  padding-top: 30%;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 15px;
+  align-items: self-end;
+  justify-content: center;
+  figure {
+    margin: 15px;
+    &:hover {
+      opacity: .8;
+    }
+  }
+}

@@ -5,4 +5,7 @@ $secondary: #fbdeac;
 @import "./base.scss";
 @import "./home.scss";
 @import "./bio.scss";
+@import "gallery";
+@import "~photoswipe/dist/photoswipe.css";
+@import "~photoswipe/src/css/default-skin/default-skin";
 
