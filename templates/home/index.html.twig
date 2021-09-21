@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Accueil - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+<div class="shutters d-flex">
+    <div class="shutter-left slide-in-left">
+        <p>LAURIE</p>
+        <p>PERET</p>
+    </div>
+    <div class="shutter-right slide-in-right">
+        <img src="{{ asset('build/images/laurie_droite.png') }}" alt="Laurie Peret" class="laurie-droite">
+    </div>
+</div>
+<div class="container-fluid container-cards">
+    <div class="row menu-cards">
+        <div class="col-md-4 col-xs-12">
+            <div class="card card-bio">
+                <h2>BIOGRAPHIE</h2>
+            </div>
+        </div>
+        <div class="col-md-4 col-xs-12">
+            <div class="card card-show">
+                <h2>SPECTACLES</h2>
+            </div>
+        </div>
+        <div class="col-md-4 col-xs-12">
+            <div class="card card-media">
+                <h2>MEDIAS</h2>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="text-center text-primary">ACTUS</h2>
+            {% include "components/_carousel.html.twig" %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <h2 class="text-center text-primary">BOUTIQUE</h2>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,91 @@
+.laurie-droite {
+    width: 50vw;
+}
+.shutters {
+    align-items: center;
+}
+.shutter-left {
+    font-family: 'Montserrat',Helvetica,Arial,Lucida,sans-serif;
+    font-weight: 800;
+    text-align: center;
+    line-height: 1em;
+    font-size: 5rem;
+    width: 50vw;
+}
+
+.shutter-right {
+    width: 50vw;
+}
+
+.slide-in-right {
+    animation-name: slideInRight;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+.menu-cards {
+    margin: 15px;
+}
+.container-cards {
+    background-image: url('../images/fond-2.jpg');
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+}
+.card {
+    text-align: center;
+    font-weight: 700;
+    font-size: 2em;
+    padding-top: 50%;
+    color: $secondary;
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+}
+.card-bio {
+    background-image: linear-gradient(180deg,rgba(91,91,91,0.42) 0%,rgba(48,48,48,0.4) 0%), url('../images/laurie_bio.jpg');
+}
+.card-show {
+    background-image: linear-gradient(180deg,rgba(91,91,91,0.42) 0%,rgba(48,48,48,0.4) 0%),url('../images/laurie_spectacles.jpeg');
+}
+.card-media {
+    background-image: linear-gradient(180deg,rgba(91,91,91,0.42) 0%,rgba(48,48,48,0.4) 0%),url('../images/laurie_media.jpg');
+}
+.carousel-item > img {
+    height: 80vh;
+    object-fit: cover;
+}
+@keyframes slideInRight {
+    0% {
+        transform: translateX(100%);
+        visibility: visible;
+    }
+    100% {
+        transform: translateX(0);
+    }
+} 
+.slide-in-left {
+    animation-name: slideInLeft;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%);
+        visibility: visible;
+    }
+    100% {
+        transform: translateX(0);
+    }
+} 
+@media screen and (max-width: 768px){
+    .laurie-droite {
+        width: 100vw;
+    }
+    .shutter-left {
+        display: none;
+    }
+    .card {
+        margin: 25px;
+    }
+}
+
