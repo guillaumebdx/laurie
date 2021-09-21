@@ -16,17 +16,17 @@
 </div>
 <div class="container-fluid container-cards">
     <div class="row menu-cards">
-        <div class="col-md-4 col-xs-12">
+        <div class="col-md-4 col-sm-12 d-flex justify-content-center">
             <div class="card card-bio">
                 <h2>BIOGRAPHIE</h2>
             </div>
         </div>
-        <div class="col-md-4 col-xs-12">
+        <div class="col-md-4 col-sm-12 d-flex justify-content-center">
             <div class="card card-show">
                 <h2>SPECTACLES</h2>
             </div>
         </div>
-        <div class="col-md-4 col-xs-12">
+        <div class="col-md-4 col-sm-12 d-flex justify-content-center">
             <div class="card card-media">
                 <h2>MEDIAS</h2>
             </div>
@@ -34,15 +34,25 @@
     </div>
 </div>
 <div class="container-fluid">
-    <div class="row">
+    <div class="row" id="actu">
         <div class="col-12">
-            <h2 class="text-center text-primary">ACTUS</h2>
+            <h2 class="text-center text-secondary d-flex justify-content-center align-items-center subtitle">
+                <i class="far fa-newspaper"></i><span class="subtitle-text ms-3 me-3">ACTUS</span><i class="far fa-newspaper"></i>
+            </h2>
             {% include "components/_carousel.html.twig" %}
         </div>
     </div>
-    <div class="row">
+    <div class="row" id="boutique">
         <div class="col-12">
-            <h2 class="text-center text-primary">BOUTIQUE</h2>
+            <h2 class="text-center text-secondary d-flex justify-content-center align-items-center subtitle">
+                <i class="fas fa-shopping-bag"></i><span class="subtitle-text ms-3 me-3">BOUTIQUE</span><i class="fas fa-shopping-bag"></i>
+            </h2>
+            <div class="articles d-flex justify-content-center">
+                <div class="article">
+                    <span class="article-overlay"><i class="fas fa-4x fa-cart-arrow-down"></i></span>
+                    <img src="{{ asset('build/images/livre_laurie.jpg') }}" alt="Les petits conseils de Laurie">
+                </div>
+            </div>
         </div>
     </div>
 </div>
