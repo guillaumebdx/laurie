@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les petits conseils - {{ parent() }}{% endblock %}
+
+{% block body %}
+
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-md-4 col-sm-12" >
+                <img src="{{ asset('build/images/livre_laurie.jpg') }}" alt="Laurie Peret" class="laurie-debout slide-in-left">
+            </div>
+            <div class="col-md-8 col-sm-12 bio-text pt-3">
+                <h1>Les petits conseils de Laurie Peret</h1>
+                <p>
+                    Toutes les réponses aux questions que vous n'avez jamais osé poser sur la parentalité !
+                    Un livre d'humour irrésistible pour se sortir de toutes les situations... ou presque.
+                    <br>
+                    Comment réussir le coucher de votre enfant afin qu'il vous foute la paix rapidement.
+                    Comment faire pour que votre entourage ne s'aperçoive pas que votre enfant est con.
+                    Comment faire passer à votre enfant son envie d'avoir un animal de compagnie.
+                    À chaque question improbable mais néanmoins essentielle, sa réponse.
+                    Laurie Peret partage ses petits conseils et astuces pour se sortir de toutes les situations... ou presque.
+                </p>
+                <div class="buy">
+                    <form action="{{ path('create_checkout') }}" method="POST" class="buy-section">
+                        <button class="btn btn-secondary font-12">
+                            <i class="fas fa-cart-arrow-down fa-2x text-primary"></i>
+                            Acheter le livre 15€
+                        </button>
+                    </form>
+
+                    <form action="{{ path('create_checkout') }}" method="POST" class="dedicace">
+                        <h2 class="text-justify">Ajoute ta dédicace !</h2>
+                        <p class="text-justify">
+                        Donne moi le nom de la personne à qui tu souhaites que je dédicace mon livre.
+                        <br>
+                        Ça peut être toi-même en vrai :)
+                        <br>
+                        Je le dédicace et personnalise avec un mot d'amour !
+                        </p>
+                        <input type="text" maxlength="100" name="dedicace" class="form-control" placeholder="Entre ici le nom pour la dédicace"><br>
+                        <button class="btn btn-secondary font-12">
+                            <i class="fas fa-cart-arrow-down fa-2x text-primary"></i>
+                            Acheter le livre + 1 mot d'amour 19,95€
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}
