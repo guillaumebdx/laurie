@@ -1,6 +1,5 @@
 .laurie-debout {
-    height: 80vh;
-    max-width: 80vw;
+    height: 100vh;
 }
 .bio-text {
     font-size: 1.2em;
@@ -9,5 +8,10 @@
         br {
             margin-bottom: 15px;
         }
+    }
+}
+@media scrend and (max-width:768px)  {
+    .laurie-debout {
+        height: 50vh;
     }
 }
