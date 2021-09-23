@@ -18,3 +18,20 @@
 .pswp__button--share {
   display: none !important;
 }
+figure {
+  a {
+    img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  a {
+    img {
+      width: 100px !important;
+      height: 100px !important;
+    }
+  }
+}
