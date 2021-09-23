@@ -17,18 +17,18 @@
 <div class="container-fluid container-cards">
     <div class="row menu-cards">
         <div class="col-md-4 col-sm-12 d-flex justify-content-center">
-            <div class="card card-bio">
+            <div class="card card-bio" style="cursor: pointer;" onclick="window.location='{{ path('bio') }}';">
                 <h2>BIOGRAPHIE</h2>
             </div>
         </div>
-        <div class="col-md-4 col-sm-12 d-flex justify-content-center">
+        <div class="col-md-4 col-sm-12 d-flex justify-content-center" style="cursor: pointer;" onclick="window.location='/spectacles';">
             <div class="card card-show">
                 <h2>SPECTACLES</h2>
             </div>
         </div>
         <div class="col-md-4 col-sm-12 d-flex justify-content-center">
-            <div class="card card-media">
-                <h2>MEDIAS</h2>
+            <div class="card card-media" style="cursor: pointer;" onclick="window.location='{{ path('gallery') }}';">
+                <h2>PHOTOS</h2>
             </div>
         </div>
     </div>
