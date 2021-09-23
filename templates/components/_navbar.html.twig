@@ -10,7 +10,7 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="#actu">Actus</a>
+          <a class="nav-link" href="{{ path('home') }}#actu">Actus</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -18,17 +18,17 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <li><a class="dropdown-item" href="{{ path('gallery') }}">Photos</a></li>
-            <li><a class="dropdown-item" href="#">Vidéos</a></li>
+            <li><a class="dropdown-item" href="https://www.youtube.com/c/LauriePeret" target="_blank">Vidéos</a></li>
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ path('bio') }}">Spectacles</a>
+          <a class="nav-link" href="#">Spectacles</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{ path('bio') }}">Biographie</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#boutique">Boutique</a>
+          <a class="nav-link" href="{{ path('home') }}#boutique">Boutique</a>
         </li>
       </ul>
     </div>
