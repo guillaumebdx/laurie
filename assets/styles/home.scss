@@ -25,9 +25,6 @@
     animation-duration: 1s;
     animation-fill-mode: both;
 }
-.menu-cards {
-    margin: 15px;
-}
 .container-cards {
     background-image: url('../images/fond-2.jpg');
     background-size: cover;
@@ -66,7 +63,7 @@
 }
 .subtitle {
     margin: 60px;
-    height: 80px;
+    height: 50px;
     background-color: $primary;
     box-shadow: 2px 2px 9px #4a4848;
 }
@@ -143,11 +140,11 @@
     .shutter-left {
         display: none;
     }
-    .card {
-        margin: 25px;
-    }
     .carousel-item > img {
         object-fit: cover;
+    }
+    .card {
+        width: 100%;
     }
 }
 
