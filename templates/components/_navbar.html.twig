@@ -3,12 +3,20 @@
     <div>
       <img src="{{ asset('build/images/icon.png') }}" alt="favicon_laurie">
       <a class="navbar-brand text-primary font-weight-bold" href="{{path('home')}}">Laurie Peret</a>
+      {% if app.user %}
+        connectée en tant que {{ app.user.username }} - <a href="{{ path('app_logout') }}">Deconnexion</a>
+      {% endif %}
     </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
+        {% if is_granted('ROLE_ADMIN') %}
+          <li class="nav-item">
+            <a class="nav-link" href="{{ path('admin_index') }}">Admin</a>
+          </li>
+        {% endif %}
         <li class="nav-item">
           <a class="nav-link" href="{{ path('home') }}#actu">Actus</a>
         </li>

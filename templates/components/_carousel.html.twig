@@ -6,24 +6,24 @@
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="{{ asset('build/images/carousel_1.jpeg') }}" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>La tournée repart</h5>
-        <p>Blablabla ici tu pourras mettre le texte que tu veux</p>
+      <img src="{{ newscasts[0].picture }}" class="d-block w-100" alt="Laurie Peret humoriste">
+      <div class="carousel-caption d-md-block">
+        <h5>{{ newscasts[0].title }}</h5>
+        <p>{{ newscasts[0].description }}</p>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="{{ asset('build/images/carousel_2.jpeg') }}" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Blabla titre que tu veux</h5>
-        <p>blabla ici tu mettras la description que tu veux</p>
+      <img src="{{ newscasts[1].picture }}" class="d-block w-100" alt="Laurie Peret one woman show">
+      <div class="carousel-caption d-md-block">
+        <h5>{{ newscasts[1].title }}</h5>
+        <p>{{ newscasts[1].description }}</p>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="{{ asset('build/images/carousel_3.jpeg') }}" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Blabla titre</h5>
-        <p>blabla ton texte que tu mettras toi même</p>
+      <img src="{{ newscasts[2].picture }}" class="d-block w-100" alt="Laurie Peret spectacles">
+      <div class="carousel-caption d-md-block">
+        <h5>{{ newscasts[2].title }}</h5>
+        <p>{{ newscasts[2].description }}</p>
       </div>
     </div>
   </div>

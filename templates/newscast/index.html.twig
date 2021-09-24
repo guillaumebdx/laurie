@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les infos{% endblock %}
+
+{% block body %}
+    <h1>Les infos</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Titre</th>
+                <th>Description</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for newscast in newscasts %}
+            <tr>
+                <td>{{ newscast.title }}</td>
+                <td>{{ newscast.description }}</td>
+                <td>
+                    <a href="{{ path('newscast_edit', {'id': newscast.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">Aucun résultat</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

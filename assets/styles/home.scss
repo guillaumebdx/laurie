@@ -56,7 +56,13 @@
 }
 .carousel-item > img {
     height: 80vh;
-    object-fit: cover;
+    object-fit: none;
+}
+.carousel-inner {
+    background-color: black;
+}
+.carousel-caption > p {
+    font-size: 1.5rem;
 }
 .subtitle {
     margin: 60px;
@@ -139,6 +145,9 @@
     }
     .card {
         margin: 25px;
+    }
+    .carousel-item > img {
+        object-fit: cover;
     }
 }
 

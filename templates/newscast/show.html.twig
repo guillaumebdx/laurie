@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Newscast{% endblock %}
+
+{% block body %}
+    <h1>Newscast</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ newscast.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ newscast.title }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ newscast.description }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('newscast_index') }}">back to list</a>
+
+    <a href="{{ path('newscast_edit', {'id': newscast.id}) }}">edit</a>
+
+    {{ include('newscast/_delete_form.html.twig') }}
+{% endblock %}
