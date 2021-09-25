@@ -10,6 +10,7 @@
             <tr>
                 <th>Titre</th>
                 <th>Description</th>
+                <th>Photo</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -18,6 +19,7 @@
             <tr>
                 <td>{{ newscast.title }}</td>
                 <td>{{ newscast.description }}</td>
+                <td><img src="{{ newscast.picture }}" class="admin-picture" alt=""></td>
                 <td>
                     <a href="{{ path('newscast_edit', {'id': newscast.id}) }}">Modifier</a>
                 </td>

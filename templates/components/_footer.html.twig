@@ -3,19 +3,19 @@
         <div class="row">
             <div class="col-md-4 col-sm-12 mb-3 mt-3">
                 <h3>CONTACT</h3>
-                <i class="fas fa-microphone-alt"></i> PRODUCTION : Jean-Philippe BOUCHARD <br>
-                <i class="fas fa-glass-cheers"></i> OPÉRATIONS SPÉCIALES : Jean Dupond <br>
-                <i class="fas fa-newspaper"></i> PRESSE : Jean Durand <br>
-                <i class="fas fa-bus"></i> TOURNÉE : Jean Bernard <br>
+                {% for contact in footer_builder.getcontacts %}
+                    {% if contact.icon %}
+                        <i class="fas {{ contact.icon }}"></i>
+                    {% endif %}
+                        {{ contact.title}} : {{ contact.name}} {{ contact.complement }}<br>
+                {% endfor %}
             </div>
             <div class="col-md-4 col-sm-12 mb-3 mt-3">
                 <h3>PLAN DU SITE</h3>
                 <ul>
-                    <li>Home</li>
-                    <li>Médias</li>
-                    <li>Spectacles</li>
-                    <li>Biographie</li>
-                    <li>Boutique</li>
+                    <li><a class="text-white" href="{{ path('home') }}">Home</a></li>
+                    <li><a class="text-white" href="{{ path('gallery') }}">Médias</a></li>
+                    <li><a class="text-white" href="{{ path('bio') }}">Biographie</a></li>
                     <li>
                         <a class="text-white" href="{{ path('stripe-book') }}">Les Petits conseils de Laurie Peret</a>
                     </li>
@@ -26,10 +26,11 @@
             </div>
             <div class="col-md-4 col-sm-12 mb-3 mt-3">
                 <h3>JE SUIS AUSSI ICI</h3>
-                <i class="fab fa-instagram-square fa-5x"></i>
-                <i class="fab fa-facebook-square fa-5x"></i>
-                <i class="fab fa-twitter-square fa-5x"></i>
-                <i class="fab fa-youtube-square fa-5x"></i>
+                {% for social in footer_builder.getSocials %}
+                    <a href="{{ social.url }}">
+                    <i class="fab {{ social.icon}} fa-5x"></i>
+                    </a>
+                {% endfor %}
             </div>
             <div class="row">
                 <div class="col-12 text-center">

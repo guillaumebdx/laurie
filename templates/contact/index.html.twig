@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact index{% endblock %}
+
+{% block body %}
+    <h1>Les contacts</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Titre</th>
+                <th>Nom</th>
+                <th>Complement (tel ou je ne sais quoi)</th>
+                <th>Icon</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for contact in contacts %}
+            <tr>
+                <td>{{ contact.title }}</td>
+                <td>{{ contact.name }}</td>
+                <td>{{ contact.complement }}</td>
+                <td>
+                    {% if contact.icon %}
+                        {{ contact.icon }} <i class="fas {{ contact.icon}} fa-2x"></i>
+                    {% else %}
+                        Aucun icon
+                    {% endif %}
+                </td>
+                <td>
+                    <a href="{{ path('contact_edit', {'id': contact.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">Aucun résultat</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('contact_new') }}">Créer un nouveau</a>
+{% endblock %}

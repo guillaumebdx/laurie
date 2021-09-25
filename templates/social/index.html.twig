@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Social index{% endblock %}
+
+{% block body %}
+    <h1>Les réseaux sociaux</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Icon</th>
+                <th>Url</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for social in socials %}
+            <tr>
+                <td>{{ social.name }}</td>
+                <td>{{ social.icon }} <i class="fab {{ social.icon}} fa-2x"></i></td>
+                <td>{{ social.url }}</td>
+                <td>
+                    <a href="{{ path('social_edit', {'id': social.id}) }}">modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">Aucun résultat</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('social_new') }}">Créer un nouveau</a>
+{% endblock %}
