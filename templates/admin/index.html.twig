@@ -5,6 +5,7 @@
 {% block body %}
     <div class="container">
         <h1 class="text-center">Administration</h1>
+        <h2>Contenu</h2>
         <ul class="list-group">
             <li class="list-group-item">
                 <a href="{{ path('newscast_index') }}">
@@ -19,6 +20,20 @@
             <li class="list-group-item">
                 <a href="{{ path('contact_index') }}">
                     Contacts
+                </a>
+            </li>
+        </ul>
+
+        <h2>Admin</h2>
+        <ul class="list-group">
+            <li class="list-group-item">
+                <a href="https://stats.laurieperet.fr">
+                    Statistiques
+                </a>
+            </li>
+            <li class="list-group-item">
+                <a href="https://dashboard.stripe.com">
+                    Ventes
                 </a>
             </li>
         </ul>
