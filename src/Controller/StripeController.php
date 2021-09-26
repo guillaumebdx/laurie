@@ -30,7 +30,7 @@ class StripeController extends AbstractController
         Stripe::setApiKey($this->getParameter('app.stripe_api_key'));
         $session = Session::create([
             'payment_method_types' => ['card'],
-            'shipping_rates' => ['shr_1JcyRhJNyJs5TozZ4XXrjpYo'],
+            'shipping_rates' => [$this->getParameter('app.stripe_shipping_key')],
             'shipping_address_collection' => [
                 'allowed_countries' => ['FR', 'BE', 'CH'],
             ],
