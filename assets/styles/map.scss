@@ -1,0 +1,23 @@
+.map {
+  max-width: 100%;
+  height: auto;
+  width: 100vh;
+}
+.map-container {
+  text-align: center;
+  position: relative;
+  width: 90vh;
+}
+.map-grid {
+  position: absolute;
+  top: 0;
+  display: grid;
+  grid-template-columns: repeat(52, 13px);
+}
+.map-grid-item {
+  height: 13px;
+  cursor: pointer;
+  &:hover {
+    background-color: $primary;
+  }
+}

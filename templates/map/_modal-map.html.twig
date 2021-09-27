@@ -1,0 +1,23 @@
+<div class="modal fade" id="modalEvent-{{ loop.index }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Ajoute un spectacle</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="{{ path('map') }}" method="post">
+            <div class="modal-body">
+                Box cliquée : {{ loop.index }}
+                <input type="text" class="form-control" name="city"  placeholder="Entre la ville" required>
+                <input type="text" class="form-control" name="date"  placeholder="Entre la ou les dates" required>
+                <input type="text" class="form-control" name="url" placeholder="Entre le lien vers les billets">
+                <input type="hidden" name="block" value="{{ loop.index }}">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                <button class="btn btn-primary">Enregistrer</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
