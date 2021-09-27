@@ -1,0 +1,24 @@
+<div class="modal fade" id="modalInfo-{{ loop.index }}" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">{{ representation.city }}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="{{ path('map') }}" method="post">
+                <div class="modal-body">
+                    {{ representation.city }}
+                    <br>
+                    {{ representation.date }}
+                    <br>
+                    <a href="{{ representation.url }}" class="btn btn-secondary" target="_blank">
+                        Tarifs & réservations
+                    </a>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

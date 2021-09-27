@@ -1,18 +1,20 @@
 .map {
   max-width: 100%;
   height: auto;
-  width: 100vh;
 }
 .map-container {
   text-align: center;
   position: relative;
-  width: 90vh;
+  width: 650px;
 }
 .map-grid {
   position: absolute;
   top: 0;
   display: grid;
   grid-template-columns: repeat(52, 13px);
+}
+.booked {
+  background-color: $secondary;
 }
 .map-grid-item {
   height: 13px;

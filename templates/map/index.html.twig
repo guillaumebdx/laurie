@@ -9,11 +9,18 @@
             <img class="map" src="{{ asset('build/images/map.png') }}" alt="carte France">
             <div class="map-grid">
             {% for i in 1..2392 %}
-                <div class="map-grid-item" type="button" data-bs-toggle="modal" data-bs-target="#modalEvent-{{ loop.index }}">
                 {% if block_representations[loop.index] is defined %}
-                    <span>
+                    <div class="map-grid-item booked">
+                {% else %}
+                        <div class="map-grid-item" type="button" data-bs-toggle="modal" data-bs-target="#modalEvent-{{ loop.index }}">
+                {% endif %}
+
+                {% if block_representations[loop.index] is defined %}
+                    <span type="button" data-bs-toggle="modal" data-bs-target="#modalInfo-{{ loop.index }}">
                         <img src="{{ asset('build/images/icon.png') }}" alt="favicon_laurie">
                     </span>
+                    {% set representation = block_representations[loop.index] %}
+                    {% include 'map/_modal-information.html.twig' %}
                 {% endif %}
                 </div>
                 {% include 'map/_modal-map.html.twig' %}
