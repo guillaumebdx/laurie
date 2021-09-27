@@ -3,9 +3,6 @@
 {% block title %}Ajouter une date{% endblock %}
 
 {% block body %}
-    <span >
-                        <img src="{{ asset('build/images/icon.png') }}" alt="favicon_laurie" data-bs-toggle="popover" title="Popover title" data-bs-content="And here's some amazing content. It's very engaging. Right?">
-                    </span>
     <div class="container">
         <h1 class="text-center">Administration de la tournée</h1>
         <div class="map-container">
@@ -14,7 +11,7 @@
             {% for i in 1..2392 %}
                 <div class="map-grid-item" type="button" data-bs-toggle="modal" data-bs-target="#modalEvent-{{ loop.index }}">
                 {% if block_representations[loop.index] is defined %}
-                    <span data-bs-toggle="popover" title="Popover title" data-bs-content="And here's some amazing content. It's very engaging. Right?">
+                    <span>
                         <img src="{{ asset('build/images/icon.png') }}" alt="favicon_laurie">
                     </span>
                 {% endif %}
