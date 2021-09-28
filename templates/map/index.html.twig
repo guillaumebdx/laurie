@@ -3,9 +3,8 @@
 {% block title %}Ajouter une date{% endblock %}
 
 {% block body %}
-    <div class="container">
         <h1 class="text-center">Administration de la tournée</h1>
-        <div class="map-container">
+        <div class="map-container" id="map-container">
             <img class="map" src="{{ asset('build/images/map.png') }}" alt="carte France">
             <div class="map-grid">
             {% for i in 1..2392 %}
@@ -28,6 +27,12 @@
             </div>
 
         </div>
-    </div>
-
+            <script>
+                let screenWidth = window.innerWidth;
+                let mapContainer = document.getElementById('map-container');
+                if (screenWidth < 680) {
+                    mapContainer.style.transform = 'scale(' + screenWidth/1000 + ')';
+                    mapContainer.style.marginLeft = '-150px';
+                }
+            </script>
 {% endblock %}
