@@ -23,6 +23,13 @@
     background-color: $primary;
   }
 }
+.rainbow-map {
+  width: 50px;
+  z-index: 5;
+  position: relative;
+  left: -15px;
+  top: -15px;
+}
 
 @media screen and (max-width: 680px){
   .modal-backdrop {

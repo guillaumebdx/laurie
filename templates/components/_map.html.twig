@@ -1,0 +1,41 @@
+<div class="map-container" id="map-container">
+    <img class="map" src="{{ asset('build/images/map.png') }}" alt="carte France">
+    <div class="map-grid">
+        {% for i in 1..2392 %}
+            {% if block_representations[loop.index] is defined %}
+                <div class="map-grid-item booked">
+            {% else %}
+                <div class="map-grid-item" type="button" data-bs-toggle="modal" data-bs-target="#modalEvent-{{ loop.index }}">
+            {% endif %}
+
+            {% if block_representations[loop.index] is defined %}
+                <span type="button" data-bs-toggle="modal" data-bs-target="#modalInfo-{{ loop.index }}">
+                        <img type="button" data-bs-toggle="modal" data-bs-target="#modalInfo-{{ loop.index }}" src="{{ asset('build/images/icon.png') }}" class="rainbow-map" alt="favicon_laurie">
+                    </span>
+                {% set representation = block_representations[loop.index] %}
+                {% include 'map/_modal-information.html.twig' %}
+            {% endif %}
+            {% if block_representations[loop.index] is defined %}
+                </div>
+            {% else %}
+                </div>
+            {% endif %}
+            {% include 'map/_modal-map.html.twig' %}
+        {% endfor %}
+    </div>
+</div>
+<script>
+    let mapContainer = document.getElementById('map-container');
+    const transformMap = () => {
+        let screenWidth = window.innerWidth;
+        if (screenWidth < 680) {
+            mapContainer.style.transform = 'scale(' + screenWidth/1115 + ')';
+            mapContainer.style.transformOrigin = '0% 0%';
+        } else {
+            mapContainer.style.transform = 'unset';
+        }
+    }
+    transformMap();
+
+
+</script>
