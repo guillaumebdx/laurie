@@ -9,7 +9,7 @@
             <div class="map-grid">
             {% for i in 1..2392 %}
                 {% if block_representations[loop.index] is defined %}
-                    <div class="map-grid-item booked">
+                        <div class="map-grid-item booked">
                 {% else %}
                         <div class="map-grid-item" type="button" data-bs-toggle="modal" data-bs-target="#modalEvent-{{ loop.index }}">
                 {% endif %}
@@ -21,18 +21,30 @@
                     {% set representation = block_representations[loop.index] %}
                     {% include 'map/_modal-information.html.twig' %}
                 {% endif %}
-                </div>
+                    {% if block_representations[loop.index] is defined %}
+                        </div>
+                    {% else %}
+                        </div>
+                    {% endif %}
                 {% include 'map/_modal-map.html.twig' %}
             {% endfor %}
             </div>
-
         </div>
             <script>
-                let screenWidth = window.innerWidth;
-                let mapContainer = document.getElementById('map-container');
-                if (screenWidth < 680) {
-                    mapContainer.style.transform = 'scale(' + screenWidth/1000 + ')';
-                    mapContainer.style.marginLeft = '-150px';
+                const transformMap = () => {
+                    let screenWidth = window.innerWidth;
+                    if (screenWidth < 680) {
+                        mapContainer.style.transform = 'scale(' + screenWidth/1000 + ')';
+                        mapContainer.style.transformOrigin = '0% 0%';
+                    } else {
+                        mapContainer.style.transform = 'unset';
+                    }
                 }
+                let mapContainer = document.getElementById('map-container');
+                transformMap();
+                window.addEventListener('resize', () => {
+                    transformMap();
+                })
+
             </script>
 {% endblock %}

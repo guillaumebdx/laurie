@@ -23,16 +23,10 @@
     background-color: $primary;
   }
 }
-/*
-@media screen and (max-width: 768px){
-  .map-container {
-    transform: scale(0.7);
-    margin-left: -90px;
+
+@media screen and (max-width: 680px){
+  .modal-backdrop {
+    position: unset;
   }
 }
-@media screen and (max-width: 375px){
-  .map-container {
-    transform: scale(0.5);
-    margin-left: -150px;
-  }
-}*/
+
