@@ -16,12 +16,15 @@
 .booked {
   background-color: $secondary;
 }
-.map-grid-item {
+.map-grid-item-admin {
   height: 13px;
   cursor: pointer;
   &:hover {
     background-color: $primary;
   }
+}
+.map-grid-item {
+  height: 13px;
 }
 .rainbow-map {
   width: 50px;

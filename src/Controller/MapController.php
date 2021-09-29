@@ -41,6 +41,7 @@ class MapController extends AbstractController
         }
         return $this->render('map/index.html.twig', [
             'block_representations' => $blockRepresentations,
+            'map_context' => 'admin',
         ]);
     }
 }

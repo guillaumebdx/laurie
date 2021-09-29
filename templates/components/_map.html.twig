@@ -2,10 +2,10 @@
     <img class="map" src="{{ asset('build/images/map.png') }}" alt="carte France">
     <div class="map-grid">
         {% for i in 1..2392 %}
-            {% if block_representations[loop.index] is defined %}
-                <div class="map-grid-item booked">
+            {% if block_representations[loop.index] is defined or map_context == 'home' %}
+                <div class="map-grid-item">
             {% else %}
-                <div class="map-grid-item" type="button" data-bs-toggle="modal" data-bs-target="#modalEvent-{{ loop.index }}">
+                <div class="map-grid-item-admin" type="button" data-bs-toggle="modal" data-bs-target="#modalEvent-{{ loop.index }}">
             {% endif %}
 
             {% if block_representations[loop.index] is defined %}
