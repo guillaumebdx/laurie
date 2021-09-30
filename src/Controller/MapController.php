@@ -44,4 +44,14 @@ class MapController extends AbstractController
             'map_context' => 'admin',
         ]);
     }
+
+    /**
+     * @Route("/delete/{id}", name="delete_representation")
+     */
+    public function deleteRepresentation(Representation $representation, EntityManagerInterface $entityManager)
+    {
+        $entityManager->remove($representation);
+        $entityManager->flush();
+        return $this->redirectToRoute('map');
+    }
 }

@@ -16,9 +16,15 @@
                     </a>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">OK</button>
                 </div>
             </form>
+            {% if is_granted('ROLE_ADMIN') %}
+                <form method="post" action="{{ path('delete_representation', {'id': representation.id}) }}" onsubmit="return confirm('Attention : veux tu vraiment supprimer ?');">
+                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ representation.id) }}">
+                    <button class="btn btn-danger">Supprimer</button>
+                </form>
+            {% endif %}
         </div>
     </div>
 </div>

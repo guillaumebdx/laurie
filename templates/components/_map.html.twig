@@ -1,5 +1,5 @@
 <div class="map-container" id="map-container">
-    <img class="map" src="{{ asset('build/images/map.png') }}" alt="carte France">
+    <img class="map" src="{{ asset('build/images/spectacles_laurie_peret.png') }}" alt="Carte des spectacles de Laurie Peret">
     <div class="map-grid">
         {% for i in 1..2392 %}
             {% if block_representations[loop.index] is defined or map_context == 'home' %}
@@ -28,8 +28,8 @@
     let mapContainer = document.getElementById('map-container');
     const transformMap = () => {
         let screenWidth = window.innerWidth;
-        if (screenWidth < 680) {
-            mapContainer.style.transform = 'scale(' + screenWidth/1115 + ')';
+        if (screenWidth < 700) {
+            mapContainer.style.transform = 'scale(' + screenWidth/700 + ')';
             mapContainer.style.transformOrigin = '0% 0%';
         } else {
             mapContainer.style.transform = 'unset';
