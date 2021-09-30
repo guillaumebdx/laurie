@@ -9,8 +9,8 @@
             {% endif %}
 
             {% if block_representations[loop.index] is defined %}
-                <span type="button" data-bs-toggle="modal" data-bs-target="#modalInfo-{{ loop.index }}">
-                        <img type="button" data-bs-toggle="modal" data-bs-target="#modalInfo-{{ loop.index }}" src="{{ asset('build/images/icon.png') }}" class="rainbow-map" alt="favicon_laurie">
+                <span data-bs-toggle="modal" data-bs-target="#modalInfo-{{ loop.index }}">
+                        <img data-bs-toggle="modal" data-bs-target="#modalInfo-{{ loop.index }}" src="{{ asset('build/images/icon.png') }}" class="rainbow-map" alt="favicon_laurie">
                     </span>
                 {% set representation = block_representations[loop.index] %}
                 {% include 'map/_modal-information.html.twig' %}
