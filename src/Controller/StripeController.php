@@ -18,7 +18,8 @@ class StripeController extends AbstractController
      */
     public function index(): Response
     {
-        return $this->render('stripe/index.html.twig');
+        return $this->redirect('https://laurieperet.shop');
+        //return $this->render('stripe/index.html.twig');
     }
 
     /**
