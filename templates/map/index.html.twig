@@ -4,5 +4,18 @@
 
 {% block body %}
         <h1 class="text-center">Administration de la tournée</h1>
-        {% include '/components/_map.html.twig' %}
+        <div class="d-flex">
+                {% include '/components/_map.html.twig' %}
+                <div>
+                        <div class="list-group maxwidth-30vw">
+                                {% for representation in representations %}
+                                        <a target="_blank" href="{{ representation.url }}" class="list-group-item list-group-item-action">
+                                               <span class="text-primary"> {{ representation.city }} </span> - {{ representation.date }}
+                                                <br>
+                                                {{ representation.url }}
+                                        </a>
+                                {% endfor %}
+                        </div>
+                </div>
+        </div>
 {% endblock %}

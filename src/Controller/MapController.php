@@ -34,12 +34,13 @@ class MapController extends AbstractController
             $entityManager->persist($representation);
             $entityManager->flush();
         }
-        $representations = $representationRepository->findAll();
+        $representations = $representationRepository->findBy([], ['city' => 'ASC']);
         $blockRepresentations = [];
         foreach ($representations as $representation) {
             $blockRepresentations[$representation->getBlock()] = $representation;
         }
         return $this->render('map/index.html.twig', [
+            'representations' => $representations,
             'block_representations' => $blockRepresentations,
             'map_context' => 'admin',
         ]);
